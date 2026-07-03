@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Sample" default="dist" basedir=".">
+
+    <get src="https://github.com/martinpaljak/ant-javacard/releases/latest/download/ant-javacard.jar" dest="." skipexisting="true"/>
+    <taskdef name="javacard" classname="pro.javacard.ant.JavaCard" classpath="ant-javacard.jar"/>
+
+    <description>Build the project</description>
+    <target name="dist" description="generate the distribution">
+        <tstamp/>
+        <javacard jckit="sdks/jc310r20210706_kit">
+            <cap targetsdk="3.0.4" aid="f0:12:34:56:78" output="Sample.cap" sources="src" version="1.0">
+                <applet class="org.suut.javacard.sample.Sample" aid="f0:12:34:56:78:01"/>
+            </cap>
+        </javacard>
+    </target>
+    <target name="clean" description="clean up">
+        <delete file="Sample.cap"/>
+    </target>
+</project>

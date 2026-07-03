@@ -1,0 +1,21 @@
+# IDE
+/.idea/
+
+# Build system
+/ant-javacard.jar
+
+# Artifacts
+/*.cap
+/*.jca
+/*.jar
+
+# Keys
+*.pem
+*.der
+*.txt
+*.bin
+*.p8
+
+# Private API files
+/ext/JCOPx_API-R1.3.4.jar
+*.jar
